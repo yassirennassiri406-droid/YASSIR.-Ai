@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YASSIR.AI | مساعد تحضير محتوى إسلامي لصفحات إنستغرام</title>
+<meta name="description" content="YASSIR.AI أداة تساعدك تحضّر منشورات إسلامية (آيات وأحاديث وحكم) وتنظّم انتظام نشرك عبر سجل ومتتبع محلي. لا تقوم بأي أتمتة على حسابك ولا تطلب كلمة سر إنستغرام.">
+<meta name="keywords" content="YASSIR.AI, مساعد محتوى اسلامي, مولد منشورات اسلامية, تنظيم نشر انستغرام">
+<meta name="author" content="YASSIR.AI">
+<meta name="robots" content="index, follow">
+
+<meta name="googlebot" content="index, follow">
+<link rel="canonical" href="https://yassirai.netlify.app">
+
+<meta property="og:title" content="YASSIR.AI — مساعد تحضير محتوى إسلامي">
+<meta property="og:description" content="ولّد منشورات إسلامية جاهزة وتابع انتظام نشرك، بدون اتصال بحسابك على إنستغرام.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yassirai.netlify.app">
+<meta property="og:image" content="https://yassirai.netlify.app/logo.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="YASSIR.AI">
+<meta name="twitter:description" content="مساعد تحضير محتوى إسلامي — يولّد ويحفظ ويذكّرك، بدون أتمتة على حسابك">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="pattern-strip" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">مساعد تخطيط المحتوى</span>
+    <h1>YASSIR.AI</h1>
+    <p class="tagline">جهّز منشوراتك الإسلامية بانتظام، بدون أتمتة تخالف قواعد إنستغرام.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="card" id="generator-card">
+    <div class="card-head">
+      <span class="eyebrow">01</span>
+      <h2>مولّد المنشورات</h2>
+    </div>
+    <p class="card-hint">اختر النوع، ثم ولّد نصًا جاهزًا للنشر.</p>
+
+    <div class="chip-row" role="group" aria-label="نوع المحتوى">
+      <button class="chip active" data-type="اية">آية</button>
+      <button class="chip" data-type="حديث">حديث</button>
+      <button class="chip" data-type="حكمة">حكمة</button>
+    </div>
+
+    <button class="btn-primary" id="generateBtn">ولّد منشورًا</button>
+    <textarea id="post" rows="5" readonly placeholder="سيظهر المنشور هنا..."></textarea>
+    <div class="btn-row">
+      <button class="btn-ghost" id="copyBtn">نسخ النص</button>
+      <button class="btn-ghost" id="saveBtn">حفظ في السجل</button>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M0 10 L20 10 L25 2 L30 18 L35 2 L40 18 L45 10 L200 10" /></svg>
+  </div>
+
+  <section class="card" id="streak-card">
+    <div class="card-head">
+      <span class="eyebrow">02</span>
+      <h2>انتظام النشر</h2>
+    </div>
+    <p class="card-hint">هذا عدّاد صادق لعدد المنشورات المحفوظة — مو تقديرًا وهميًا لعدد المتابعين.</p>
+    <div class="stat-row">
+      <div class="stat">
+        <span class="stat-value" id="totalPosts">0</span>
+        <span class="stat-label">منشورات محفوظة</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="weekPosts">0</span>
+        <span class="stat-label">هذا الأسبوع</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="streakDays">0</span>
+        <span class="stat-label">أيام متتالية</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M0 10 L20 10 L25 2 L30 18 L35 2 L40 18 L45 10 L200 10" /></svg>
+  </div>
+
+  <section class="card" id="reminder-card">
+    <div class="card-head">
+      <span class="eyebrow">03</span>
+      <h2>تذكير بموعد النشر</h2>
+    </div>
+    <p class="card-hint">تنبيه محلي في المتصفح فقط — يعمل ما دام هذا التبويب مفتوحًا، وليس نشرًا تلقائيًا حقيقيًا.</p>
+    <div class="reminder-row">
+      <input type="number" id="reminderMinutes" min="1" placeholder="بعد كم دقيقة؟" value="60">
+      <button class="btn-primary" id="reminderBtn">فعّل التذكير</button>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M0 10 L20 10 L25 2 L30 18 L35 2 L40 18 L45 10 L200 10" /></svg>
+  </div>
+
+  <section class="card" id="log-card">
+    <div class="card-head">
+      <span class="eyebrow">04</span>
+      <h2>سجل النشاط</h2>
+    </div>
+    <div id="log" class="log-box"><p class="log-empty">لا يوجد نشاط بعد.</p></div>
+  </section>
+
+</main>
+
+<footer class="footnote">
+  لا يوجد أي اتصال حقيقي بحساب إنستغرام في هذه الأداة — هي فقط لتحضير المحتوى وتنظيمه.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
